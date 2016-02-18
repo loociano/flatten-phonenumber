@@ -24,17 +24,22 @@
     $input.addEventListener('keyup', function(){
       
       $copy.value = exports.convertPhoneNumber(this.value);
-      $output.innerText = 'Copied to clipboard: ' + $copy.value;
 
-      try {
+      if ($copy.value.charAt(0) === '+'){
+        $output.innerText = 'Copied to clipboard: ' + $copy.value;
         $copy.select();
-        document.execCommand('copy');
 
-      } catch(e){
-        console.warn('Problem copying to clipboard');
+        try {
+          document.execCommand('copy');
+        } catch(e){
+          console.warn('Problem copying to clipboard');
+        }
+
+        $input.focus();
+      } else {
+        $output.innerText = $copy.value; // Error
       }
 
-      $input.focus();
     });
 
   </script>
