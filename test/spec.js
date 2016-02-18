@@ -37,4 +37,12 @@ describe('Telephone number conversion', function(){
     assert.equal(converter.convertPhoneNumber('+44 123 456 789 0044 987 654 321'), '+44123456789');
   });
 
+  it('should understand slashes', function(){
+    assert.equal(converter.convertPhoneNumber('+44123456789/123'), '+44123456789');
+  });
+
+  it('should not discard two or more consecutive zeros', function(){
+    assert.equal(converter.convertPhoneNumber('+4412300456'), '+4412300456');
+  });
+
 });
