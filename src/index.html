@@ -12,24 +12,24 @@
   <label for="phone-number">Phone Number</label>
   <input type="text" name="phone-number" id="phone-number" />
 
-  <div id="output"></div> 
+  <div id="output"></div>
   <input type="text" id="copy-to-clipboard" style="position:fixed; left:-9999px;" />
 
   <script type="text/javascript">
-    
+
     var $input = document.getElementById('phone-number');
     var $output = document.getElementById('output');
     var $copy = document.getElementById('copy-to-clipboard');
-    
+
     $input.addEventListener('keyup', function(){
-      
+
       $copy.value = exports.convertPhoneNumber(this.value);
 
       if ($copy.value.charAt(0) === '+'){
-        $output.innerText = 'Copied to clipboard: ' + $copy.value;
+        $output.innerHTML = 'Copied to clipboard: ' + $copy.value;
         copyToClipboard($copy);
       } else {
-        $output.innerText = $copy.value; // Error
+        $output.innerHTML = $copy.value; // Error
       }
 
     });
