@@ -13,17 +13,32 @@
   <input type="text" name="phone-number" id="phone-number" />
 
   <div id="output"></div> 
+  <input type="text" id="copy-to-clipboard" style="position:fixed; left:-9999px;" />
 
   <script type="text/javascript">
     
     var $input = document.getElementById('phone-number');
     var $output = document.getElementById('output');
+    var $copy = document.getElementById('copy-to-clipboard');
     
     $input.addEventListener('keyup', function(){
-      $output.innerText = exports.convertPhoneNumber(this.value);
+      
+      $copy.value = exports.convertPhoneNumber(this.value);
+      $output.innerText = 'Copied to clipboard: ' + $copy.value;
+
+      try {
+        $copy.select();
+        document.execCommand('copy');
+
+      } catch(e){
+        console.warn('Problem copying to clipboard');
+      }
+
+      $input.focus();
     });
 
   </script>
 
 </body>
 </html>
+
