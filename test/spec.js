@@ -16,7 +16,7 @@ describe('Telephone number conversion', function(){
   });
 
   it('should ignore spaces and symbols', function () {
-    assert.equal(converter.convertPhoneNumber('+44 123-45x6789'), '+44123456789');
+    assert.equal(converter.convertPhoneNumber('+44 12_3-45x6789'), '+44123456789');
   });
 
   it('should ignore numbers in brackets', function () {
