@@ -19,4 +19,15 @@ describe('Telephone number conversion', function(){
     assert.equal('+44123456789', converter.convertPhoneNumber('+44(0)123456789'));
   });
 
+  it('should not convert if number is not given', function () {
+    assert.equal('', converter.convertPhoneNumber());
+  });
+
+  it('should ignore characters', function () {
+    
+    assert.equal('', converter.convertPhoneNumber('abc'));
+    assert.equal('+44123456789', converter.convertPhoneNumber('+44123456789 Name'));
+    assert.equal('+44123456789', converter.convertPhoneNumber('+44123456789Name LastName'));
+  });
+
 });
