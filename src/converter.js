@@ -1,3 +1,9 @@
+'use strict';
+
+if (typeof exports === 'undefined') {
+  var exports = {};
+}
+
 /**
  * Converts a phone number to the form +44123456789. 
  * Plus sign for international code. No spaces, characters or symbols
