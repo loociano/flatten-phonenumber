@@ -27,20 +27,22 @@
 
       if ($copy.value.charAt(0) === '+'){
         $output.innerText = 'Copied to clipboard: ' + $copy.value;
-        $copy.select();
-
-        try {
-          document.execCommand('copy');
-        } catch(e){
-          console.warn('Problem copying to clipboard');
-        }
-
-        $input.focus();
+        copyToClipboard($copy);
       } else {
         $output.innerText = $copy.value; // Error
       }
 
     });
+
+    function copyToClipboard($copy){
+      $copy.select();
+      try {
+        document.execCommand('copy');
+      } catch(e){
+        console.warn('Problem copying to clipboard');
+      }
+      $input.focus();
+    }
 
   </script>
 
