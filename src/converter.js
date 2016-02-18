@@ -15,5 +15,9 @@ exports.convertPhoneNumber = function(number){
     }
   }
 
+  // ignore subsequent numbers
+  number = plus + number.split(/\+/)[1]; 
+  number = number.split(/00/)[0];
+
   return number;
 }
