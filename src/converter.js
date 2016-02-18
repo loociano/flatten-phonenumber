@@ -1,3 +1,10 @@
+/**
+ * Converts a phone number to the form +44123456789. 
+ * Plus sign for international code. No spaces, characters or symbols
+ *
+ * @param {string} phone number 
+ * @return {string} converted phone number
+ */
 exports.convertPhoneNumber = function(number){
 
   if (!number) return '';
