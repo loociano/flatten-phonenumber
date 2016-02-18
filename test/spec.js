@@ -34,7 +34,6 @@ describe('Telephone number conversion', function(){
 
   it('should ignore sequent numbers', function () {
     assert.equal(converter.convertPhoneNumber('+44 123 456 789 +44 987 654 321'), '+44123456789');
-    assert.equal(converter.convertPhoneNumber('+44 123 456 789 0044 987 654 321'), '+44123456789');
   });
 
   it('should understand slashes', function(){

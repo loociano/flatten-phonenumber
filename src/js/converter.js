@@ -5,10 +5,10 @@ if (typeof exports === 'undefined') {
 }
 
 /**
- * Converts a phone number to the form +44123456789. 
+ * Converts a phone number to the form +44123456789.
  * Plus sign for international code. No spaces, characters or symbols
  *
- * @param {string} phone number 
+ * @param {string} phone number
  * @return {string} converted phone number
  */
 exports.convertPhoneNumber = function(number){
@@ -29,8 +29,7 @@ exports.convertPhoneNumber = function(number){
   }
 
   // ignore subsequent numbers
-  number = plus + number.split(/\+/)[1]; 
-  number = number.split(/00/)[0];
+  number = plus + number.split(/\+/)[1];
 
   return number;
 }
