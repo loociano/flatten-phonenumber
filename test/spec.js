@@ -11,6 +11,10 @@ describe('Telephone number conversion', function(){
     assert.equal('+44123456789', converter.convertPhoneNumber('0044123456789'));
   });
 
+  it('should detect missing international code', function () {
+    assert.equal('Missing international code', converter.convertPhoneNumber('44123456789'));
+  });
+
   it('should ignore spaces and symbols', function () {
     assert.equal('+44123456789', converter.convertPhoneNumber('+44 123-45x6789'));
   });
@@ -24,8 +28,6 @@ describe('Telephone number conversion', function(){
   });
 
   it('should ignore characters', function () {
-    
-    assert.equal('', converter.convertPhoneNumber('abc'));
     assert.equal('+44123456789', converter.convertPhoneNumber('+44123456789 Name'));
     assert.equal('+44123456789', converter.convertPhoneNumber('+44123456789Name LastName'));
   });
