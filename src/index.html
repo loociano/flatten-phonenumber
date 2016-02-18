@@ -12,13 +12,36 @@
   <title>Phone converter</title>
   <script type="text/javascript" src="js/converter.js"></script>
 
+  <style>
+  .app {
+    height: 500px;
+  }
+  .controls {
+    width: 100%;
+  }
+  label[for='phone-number'] {
+    display: block;
+  }
+  #phone-number {
+    width: 15%;
+  }
+  #output {
+    color: #aaa;
+    height: 22px;
+  }
+  </style>
+
 </head>
 <body>
 
-  <label for="phone-number">Phone Number</label>
-  <input type="text" name="phone-number" id="phone-number" />
+  <div class="app valign-wrapper">
+    <div class="valign center controls">
+      <label for="phone-number">Type a phone number below:</label>
+        <input type="text" name="phone-number" id="phone-number" />
+        <div id="output"></div>
+    </div>
+  </div>
 
-  <div id="output"></div>
   <input type="text" id="copy-to-clipboard" style="position:fixed; left:-9999px;" />
 
   <script type="text/javascript">
