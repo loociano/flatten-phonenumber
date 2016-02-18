@@ -15,7 +15,7 @@ exports.convertPhoneNumber = function(number){
 
   if (!number) return '';
 
-  number = number.replace(/\([a-zA-Z0-9_]\)|[^0-9+]/g, '');
+  number = number.replace(/\/([0-9]+)|\([a-zA-Z0-9_]\)|[^0-9+]/g, '');
 
   var zeros = '00';
   var plus = '+';
