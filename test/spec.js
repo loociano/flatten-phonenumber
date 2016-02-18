@@ -1,5 +1,5 @@
 var assert = require('assert');
-var converter = require('../src/converter');
+var converter = require('../src/js/converter');
 
 describe('Telephone number conversion', function(){
 
