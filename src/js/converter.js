@@ -24,7 +24,7 @@ exports.convertPhoneNumber = function(number){
     number = plus + number.substring(zeros.length);
   } else {
     if (number.charAt(0) !== plus){
-      return 'Missing international code';
+      number = plus + number;
     }
   }
 
