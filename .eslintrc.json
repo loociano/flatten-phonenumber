@@ -1,0 +1,9 @@
+{
+    "extends": "eslint:recommended",
+    "plugins": [
+        "standard"
+    ],
+    "rules": {
+      "indent": [2, 2]
+    }
+}

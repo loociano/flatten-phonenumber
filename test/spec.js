@@ -1,3 +1,5 @@
+/*global require, describe, it */
+
 var assert = require('assert');
 var converter = require('../src/js/converter');
 
