@@ -1,8 +1,8 @@
 ### Telephone Number Converter
 
-![ ](https://api.travis-ci.org/loociano/telephone-no-converter.svg?branch=master)
+![This is an image](https://api.travis-ci.org/loociano/telephone-no-converter.svg?branch=master)
 
-Converts telephone numbers to the standard form +44123456789.
+Removes spaces, symbols and (0) from telephone numbers. Changes double zeros to plus sign.
 
 #### Examples
 
